@@ -8,8 +8,6 @@ DECLARE
 	@inName AS VARCHAR(64),
 	@inPaymentPerHour FLOAT,
 
---	@outJobList AS TABLE(id AS INT, ),
-
 	@insertState AS INT,
 	@updateState AS INT, 
 	@deleteState AS INT, 
@@ -24,38 +22,17 @@ EXEC @insertState = Payroll.dbo.Job_InsertJob
 	@name = @inName,
 	@paymentPerHour = @inPaymentPerHour
 
---Check Table Data
-SELECT
-	Job.name AS Name,
-	Job.paymentPerHour AS 'Payment-Hour',
-	Job.visible AS Active
-	
-FROM Payroll.dbo.Job;
 
 -- Update Job
 EXEC @updateState = Payroll.dbo.Job_UpdateJob
 	@name = @inName,
 	@paymentPerHour = 200000.00
 
--- Check Table Data
-SELECT
-	Job.name AS Name,
-	Job.paymentPerHour AS 'Payment-Hour',
-	Job.visible AS Active
-	
-FROM Payroll.dbo.Job;
 
 -- Delete Job
 EXEC @deleteState = Payroll.dbo.Job_DeleteJob
 	@name = @inName
 
---Check Table Data
-SELECT
-	Job.name AS Name,
-	Job.paymentPerHour AS 'Payment-Hour',
-	Job.visible AS Active
-	
-FROM Payroll.dbo.Job;
 
 -- List Job
 DECLARE 
@@ -66,3 +43,12 @@ INSERT INTO @jobList(id, name, paymentPerHour)
 
 SELECT *
 FROM @jobList;
+
+
+--Check Table Data
+SELECT
+	Job.name AS Name,
+	Job.paymentPerHour AS 'Payment-Hour',
+	Job.visible AS Active
+	
+FROM Payroll.dbo.Job;

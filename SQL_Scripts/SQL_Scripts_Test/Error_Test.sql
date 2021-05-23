@@ -14,6 +14,7 @@ EXEC @insertState = Payroll.dbo.Error_InsertError
 	@error_state = 'Test',
 	@error_message = 'This is a Error Test',
 	@error_line = '0'
+	
 
 -- Check Error Table
 SELECT 

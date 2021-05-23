@@ -14,14 +14,6 @@ EXEC @insertState = Payroll.dbo.User_InsertUser
     @password = 'admin'
     
 
--- Check User Table Data
-SELECT
-    SystemUser.username AS Username,
-    SystemUser.password AS Password,
-    SystemUser.visible AS Active
-
-FROM Payroll.dbo.SystemUser;
-
 -- Delete User From Table
 EXEC @deleteState = Payroll.dbo.User_DeleteUser
     @username = "karolyi15"
