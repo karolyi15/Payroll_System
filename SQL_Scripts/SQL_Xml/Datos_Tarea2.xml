@@ -66,7 +66,7 @@
     </Usuarios>
 
 
-
+    <Operaciones>
     <Operacion Fecha="2021-02-04">
         <NuevoEmpleado FechaNacimiento="1964-04-13" Nombre="Alicia Perez Vidal" Password="7663" Username="APerez" ValorDocumentoIdentidad="55502591" idDepartamento="3" idPuesto="10" idTipoDocumentacionIdentidad="1" />
         <NuevoEmpleado FechaNacimiento="1990-11-18" Nombre="Laura Gomez Lorenzo" Password="6111" Username="LGomez" ValorDocumentoIdentidad="58062607" idDepartamento="2" idPuesto="1" idTipoDocumentacionIdentidad="1" />
@@ -2488,4 +2488,5 @@
         <DesasociaEmpleadoConDeduccion IdDeduccion="3" ValorDocumentoIdentidad="14885883" />
         <DesasociaEmpleadoConDeduccion IdDeduccion="2" ValorDocumentoIdentidad="64309304" />
     </Operacion>
+</Operaciones>
 </Datos>

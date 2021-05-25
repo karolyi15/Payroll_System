@@ -4,18 +4,16 @@
 -- Description:	Trigger Inserting Employee 
 -- =============================================
 
-CREATE TRIGGER Trigger_EmployeeMandatoryDeduction
+CREATE OR ALTER TRIGGER Trigger_EmployeeMandatoryDeduction
 ON Employee
 AFTER INSERT 
-AS
+AS		
 
-DECLARE @idEmployee AS INT
-
-SET
-	@idEmployee = (SELECT
-					TOP(1) inserted.id
-					FROM inserted
-					ORDER BY inserted.id DESC)
-
-INSERT INTO Deduction (idDeductionType, idEmployee, visible)
-	VALUES(1, @idEmployee , 1)
+INSERT INTO Deduction (idDeductionType, idEmployee, value, visible)
+SELECT
+	1,
+	inserted.id,
+	0.095,
+	1
+FROM inserted
+	

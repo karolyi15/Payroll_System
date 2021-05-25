@@ -81,14 +81,14 @@ FROM
 
 
 -- Insert Deduction Type Into Table
-INSERT INTO Payroll.dbo.DeductionType (id, name, mandatory, percentage, value, visible)
+INSERT INTO Payroll.dbo.DeductionType (id, name, mandatory, percentage, visible)
 SELECT
    
    Node_DeductionType.value('@Id','INT'),
    Node_DeductionType.value('@Nombre','VARCHAR(64)'),
    Node_DeductionType.value('@Obligatorio','VARCHAR(64)'),
    Node_DeductionType.value('@Porcentual','VARCHAR(64)'),
-   Node_DeductionType.value('@Valor','FLOAT'),
+   --Node_DeductionType.value('@Valor','FLOAT'),
    1
 
 FROM 
